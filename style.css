@@ -1,0 +1,13 @@
+:root {
+  --clr-moon-a0: #2a2d3f;
+  --clr-moon-a10: #464a6d;
+  --clr-moon-a20: #a2a8b9;
+  --clr-moon-a30: #e3d9ce;
+  --clr-moon-a40: #f5f0e6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
