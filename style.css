@@ -18,6 +18,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.header {
+  font-size: 55px;
+}
 .annie-use-your-telescope-regular {
   font-family: "Annie Use Your Telescope", cursive;
   font-weight: 400;
