@@ -14,7 +14,7 @@
 
 body {
   background-color: var(--clr-moon-a40);
-  font-size: 20px;
+  font-size: 22px;
   font-family: "Roboto", sans-serif;
 }
 
@@ -25,4 +25,24 @@ body {
   font-family: "Annie Use Your Telescope", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 18px 24px;
+  background-color: var(--clr-moon-a30);
+  color: var(--clr-moon-a0);
+}
+
+.color-box {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: none;
 }
