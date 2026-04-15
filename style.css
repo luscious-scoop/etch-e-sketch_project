@@ -63,6 +63,7 @@ body {
 }
 
 .grid-container {
+  flex: 1;
   display: flex;
 
   background-color: white;
@@ -72,4 +73,10 @@ body {
 
 .grid-box {
   border: 2px solid blue;
+}
+
+.grid-row {
+  display: flex;
+
+  border: 2px solid black;
 }
