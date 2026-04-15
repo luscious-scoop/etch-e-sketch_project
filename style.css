@@ -61,3 +61,15 @@ body {
   display: flex;
   border: 2px solid black;
 }
+
+.grid-container {
+  background-color: white;
+  max-width: 960px;
+  border: 2px solid yellow;
+}
+
+.grid-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid blue;
+}
