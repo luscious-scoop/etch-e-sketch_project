@@ -13,12 +13,15 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--clr-moon-a40);
   font-size: 16px;
   font-family: "Roboto", sans-serif;
 }
 
 .header {
+  text-align: center;
   font-size: 35px;
 }
 .annie-use-your-telescope-regular {
@@ -41,8 +44,16 @@ body {
 
 .color-box {
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
+}
+
+.selection-container {
+  align-items: center;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
