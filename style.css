@@ -51,9 +51,13 @@ body {
 }
 
 .selection-container {
-  align-items: center;
   border: 2px solid red;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.container {
+  display: flex;
+  border: 2px solid black;
 }
