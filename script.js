@@ -1,10 +1,12 @@
 const gridContainer = document.querySelector(".grid-container");
 const container = document.querySelector(".container");
 const createBtn = document.querySelector("#create-btn");
+createGrid();
 
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
   createGrid(gridSize);
+  hoveringGrid();
 });
 
 function createGrid(size = 16) {
@@ -26,4 +28,18 @@ function createGrid(size = 16) {
   }
 }
 
-createGrid();
+function hoveringGrid() {
+  let boxes = document.querySelectorAll(".grid-box");
+  boxes.forEach((box) => {
+    box.addEventListener("mouseenter", () => {
+      box.style.backgroundColor = "blue";
+    });
+  });
+  boxes.forEach((box) => {
+    box.addEventListener("mouseleave", () => {
+      box.style.backgroundColor = "white";
+    });
+  });
+}
+
+hoveringGrid();
