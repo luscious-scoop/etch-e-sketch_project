@@ -12,6 +12,10 @@ createBtn.addEventListener("click", () => {
   hoveringGrid();
 });
 
+colorPicker.addEventListener("change", (event) => {
+  hoveringGrid(event.target.value);
+});
+
 function createGrid(size = 16) {
   document.querySelectorAll(".row").forEach((row) => {
     gridContainer.removeChild(row);
@@ -30,9 +34,7 @@ function createGrid(size = 16) {
     gridContainer.appendChild(row);
   }
 }
-colorPicker.addEventListener("change", (event) => {
-  hoveringGrid(event.target.value);
-});
+
 function hoveringGrid(color = defaultColor) {
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
@@ -46,3 +48,4 @@ function hoveringGrid(color = defaultColor) {
     });
   });
 }
+function coloringGrid(color = defaultColor) {}
