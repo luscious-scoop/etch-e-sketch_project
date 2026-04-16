@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector(".grid-container");
 
+const createBtn = document.querySelector("#create-btn");
 for (let i = 1; i <= 64; i++) {
   let row = document.createElement("div");
   row.classList.add("row");
