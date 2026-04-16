@@ -4,6 +4,7 @@ const createBtn = document.querySelector("#create-btn");
 const colorPicker = document.querySelector("#color-box");
 const defaultColor = "#0000ff";
 createGrid();
+hoveringGrid();
 
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
@@ -45,5 +46,3 @@ function hoveringGrid(color = defaultColor) {
     });
   });
 }
-
-hoveringGrid();
