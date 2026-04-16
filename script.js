@@ -1,15 +1,29 @@
 const gridContainer = document.querySelector(".grid-container");
-
+const container = document.querySelector(".container");
 const createBtn = document.querySelector("#create-btn");
-for (let i = 1; i <= 64; i++) {
-  let row = document.createElement("div");
-  row.classList.add("row");
 
-  for (let j = 1; j <= 64; j++) {
-    let box = document.createElement("div");
-    box.classList.add("grid-box");
+createBtn.addEventListener("click", () => {
+  let gridSize = +prompt("Enter");
+  createGrid(gridSize);
+});
 
-    row.appendChild(box);
+function createGrid(size = 16) {
+  document.querySelectorAll(".row").forEach((row) => {
+    gridContainer.removeChild(row);
+  });
+
+  for (let i = 1; i <= size; i++) {
+    let row = document.createElement("div");
+    row.classList.add("row");
+
+    for (let j = 1; j <= size; j++) {
+      let box = document.createElement("div");
+      box.classList.add("grid-box");
+
+      row.appendChild(box);
+    }
+    gridContainer.appendChild(row);
   }
-  gridContainer.appendChild(row);
 }
+
+createGrid();
