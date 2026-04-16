@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector(".grid-container");
 const container = document.querySelector(".container");
 const createBtn = document.querySelector("#create-btn");
+const colorPicker = document.querySelector("#color-box");
 createGrid();
 
 createBtn.addEventListener("click", () => {
