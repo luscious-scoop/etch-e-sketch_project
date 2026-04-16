@@ -2,6 +2,7 @@ const gridContainer = document.querySelector(".grid-container");
 const container = document.querySelector(".container");
 const createBtn = document.querySelector("#create-btn");
 const colorPicker = document.querySelector("#color-box");
+const defaultColor = "#0000ff";
 createGrid();
 
 createBtn.addEventListener("click", () => {
@@ -28,12 +29,14 @@ function createGrid(size = 16) {
     gridContainer.appendChild(row);
   }
 }
-
-function hoveringGrid() {
+colorPicker.addEventListener("change", (event) => {
+  hoveringGrid(event.target.value);
+});
+function hoveringGrid(color = defaultColor) {
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
-    box.addEventListener("mouseenter", () => {
-      box.style.backgroundColor = "blue";
+    box.addEventListener("mouseover", () => {
+      box.style.backgroundColor = color;
     });
   });
   boxes.forEach((box) => {
