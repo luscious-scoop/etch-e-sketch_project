@@ -12,7 +12,7 @@ createBtn.addEventListener("click", () => {
   hoveringGrid();
 });
 
-colorPicker.addEventListener("change", (event) => {
+colorPicker.addEventListener("input", (event) => {
   hoveringGrid(event.target.value);
 });
 function createGrid(size = 16) {
