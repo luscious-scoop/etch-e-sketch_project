@@ -72,6 +72,9 @@ function coloringGrid(color) {
         box.style.backgroundColor = color;
       }
     });
+    box.addEventListener("mousedown", () => {
+      box.style.backgroundColor = color;
+    });
   });
 }
 // resetting functions
@@ -91,6 +94,9 @@ function eraser() {
       if (e.buttons === 1) {
         box.style.backgroundColor = "white";
       }
+    });
+    box.addEventListener("mousedown", () => {
+      box.style.backgroundColor = "white";
     });
   });
 }
