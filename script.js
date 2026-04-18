@@ -19,10 +19,14 @@ colorPicker.value = selectedColor;
 
 // main event listeners
 createBtn.addEventListener("click", () => {
-  let gridSize = +prompt("Enter");
-  createGrid(gridSize);
-  colorPicker.value = selectedColor;
-  coloringGrid(selectedColor);
+  let gridSize = +prompt("Enter Grid Size(max=100)");
+  if (gridSize > 100 || gridSize < 0) {
+    alert("Enter a range between one and 100");
+  } else {
+    createGrid(gridSize);
+    colorPicker.value = selectedColor;
+    coloringGrid(selectedColor);
+  }
 });
 
 colorPicker.addEventListener("input", (event) => {
