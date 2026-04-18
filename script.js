@@ -89,3 +89,21 @@ function eraser() {
     });
   });
 }
+
+function randomColor() {
+  let intervalId;
+  intervalId = setInterval(() => {
+    rgb1 = Math.floor(Math.random() * 256);
+    rgb2 = Math.floor(Math.random() * 256);
+    rgb3 = Math.floor(Math.random() * 256);
+    let color = `rgb(${rgb1},${rgb2},${rgb3})`;
+    coloringGrid(color);
+  }, 500);
+  document.querySelectorAll(".selection-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      clearInterval(intervalId);
+    });
+  });
+}
+const randomBtn = document.querySelector("#randomize-btn");
+randomBtn.addEventListener("click", randomColor);
