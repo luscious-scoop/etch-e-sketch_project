@@ -4,24 +4,38 @@ const createBtn = document.querySelector("#create-btn");
 const colorPicker = document.querySelector("#color-box");
 const defaultColor = "#0000FF";
 let selectedColor = defaultColor;
+
+// resetting or erasing grid
 const resetBtn = document.querySelector("#reset-btn");
+const eraserBtn = document.querySelector("#eraser-btn");
+
+eraserBtn.addEventListener("click", eraser);
 resetBtn.addEventListener("click", resetGrid);
+
+// initialize grid
 createGrid();
-hoveringGrid(selectedColor);
+coloringGrid(selectedColor);
 colorPicker.value = selectedColor;
 
+// main event listeners
 createBtn.addEventListener("click", () => {
-  let gridSize = +prompt("Enter");
-  createGrid(gridSize);
-  colorPicker.value = selectedColor;
-  hoveringGrid(selectedColor);
+  let gridSize = +prompt("Enter Grid Size(max=100)");
+  if (gridSize > 100 || gridSize < 0) {
+    alert("Enter a range between one and 100");
+  } else {
+    createGrid(gridSize);
+    colorPicker.value = selectedColor;
+    coloringGrid(selectedColor);
+  }
 });
 
 colorPicker.addEventListener("input", (event) => {
   selectedColor = event.target.value;
-  hoveringGrid(selectedColor);
+  coloringGrid(selectedColor);
   colorPicker.value = selectedColor;
 });
+
+// Main functions
 function createGrid(size = 16) {
   document.querySelectorAll(".row").forEach((row) => {
     gridContainer.removeChild(row);
@@ -41,7 +55,7 @@ function createGrid(size = 16) {
   }
 }
 
-function hoveringGrid(color) {
+function coloringGrid(color) {
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
     box.addEventListener("dragstart", (e) => {
@@ -56,7 +70,7 @@ function hoveringGrid(color) {
     });
   });
 }
-
+// resetting functions
 function resetGrid() {
   document.querySelectorAll(".grid-box").forEach((box) => {
     box.style.backgroundColor = "white";
