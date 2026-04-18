@@ -35,15 +35,18 @@ function createGrid(size = 16) {
 }
 
 function hoveringGrid(color = defaultColor) {
+  let intervalId;
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
-    box.addEventListener("mouseover", () => {
-      box.style.backgroundColor = color;
-    });
+    intervalId = setInterval(() => {
+      box.addEventListener("mousedown", () => {
+        box.style.backgroundColor = color;
+      });
+    }, 500);
   });
   boxes.forEach((box) => {
-    box.addEventListener("mouseleave", () => {
-      box.style.backgroundColor = "white";
+    box.addEventListener("mouseup", () => {
+      clearInterval(intervalId);
     });
   });
 }
