@@ -5,6 +5,10 @@ const colorPicker = document.querySelector("#color-box");
 const defaultColor = "#0000FF";
 let selectedColor = defaultColor;
 
+// random color event
+const randomBtn = document.querySelector("#randomize-btn");
+randomBtn.addEventListener("click", randomColor);
+
 // resetting or erasing grid
 const resetBtn = document.querySelector("#reset-btn");
 const eraserBtn = document.querySelector("#eraser-btn");
@@ -75,6 +79,7 @@ function resetGrid() {
   document.querySelectorAll(".grid-box").forEach((box) => {
     box.style.backgroundColor = "white";
   });
+  colorPicker.value = selectedColor;
 }
 
 function eraser() {
@@ -105,5 +110,3 @@ function randomColor() {
     });
   });
 }
-const randomBtn = document.querySelector("#randomize-btn");
-randomBtn.addEventListener("click", randomColor);
