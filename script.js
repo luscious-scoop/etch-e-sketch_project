@@ -39,8 +39,15 @@ function createGrid(size = 16) {
 function hoveringGrid(color) {
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
-    box.addEventListener("mousedown", () => {
-      box.style.backgroundColor = color;
+    box.addEventListener("dragstart", (e) => {
+      e.preventDefault();
+    });
+  });
+  boxes.forEach((box) => {
+    box.addEventListener("mouseover", (e) => {
+      if (e.buttons === 1) {
+        box.style.backgroundColor = color;
+      }
     });
   });
 }
