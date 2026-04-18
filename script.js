@@ -58,7 +58,7 @@ function hoveringGrid(color) {
 }
 
 function resetGrid() {
-  document
-    .querySelectorAll(".grid-box")
-    .forEach((box) => [(box.style.backgroundColor = "white")]);
+  document.querySelectorAll(".grid-box").forEach((box) => {
+    box.style.backgroundColor = "white";
+  });
 }
