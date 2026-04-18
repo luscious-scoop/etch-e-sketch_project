@@ -14,19 +14,19 @@ resetBtn.addEventListener("click", resetGrid);
 
 // initialize grid
 createGrid();
-hoveringGrid(selectedColor);
+coloringGrid(selectedColor);
 colorPicker.value = selectedColor;
 
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
   createGrid(gridSize);
   colorPicker.value = selectedColor;
-  hoveringGrid(selectedColor);
+  coloringGrid(selectedColor);
 });
 
 colorPicker.addEventListener("input", (event) => {
   selectedColor = event.target.value;
-  hoveringGrid(selectedColor);
+  coloringGrid(selectedColor);
   colorPicker.value = selectedColor;
 });
 function createGrid(size = 16) {
@@ -48,7 +48,7 @@ function createGrid(size = 16) {
   }
 }
 
-function hoveringGrid(color) {
+function coloringGrid(color) {
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
     box.addEventListener("dragstart", (e) => {
