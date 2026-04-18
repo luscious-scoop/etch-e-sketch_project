@@ -5,17 +5,20 @@ const colorPicker = document.querySelector("#color-box");
 const defaultColor = "#0000FF";
 let selectedColor = defaultColor;
 createGrid();
+colorPicker.value = selectedColor;
 hoveringGrid(selectedColor);
 
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
   createGrid(gridSize);
+  colorPicker.value = selectedColor;
   hoveringGrid(selectedColor);
 });
 
 colorPicker.addEventListener("input", (event) => {
   selectedColor = event.target.value;
   hoveringGrid(selectedColor);
+  colorPicker.value = selectedColor;
 });
 function createGrid(size = 16) {
   document.querySelectorAll(".row").forEach((row) => {
