@@ -4,9 +4,11 @@ const createBtn = document.querySelector("#create-btn");
 const colorPicker = document.querySelector("#color-box");
 const defaultColor = "#0000FF";
 let selectedColor = defaultColor;
+const resetBtn = document.querySelector("#reset-btn");
+resetBtn.addEventListener("click", resetGrid);
 createGrid();
-colorPicker.value = selectedColor;
 hoveringGrid(selectedColor);
+colorPicker.value = selectedColor;
 
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
@@ -53,4 +55,10 @@ function hoveringGrid(color) {
       }
     });
   });
+}
+
+function resetGrid() {
+  document
+    .querySelectorAll(".grid-box")
+    .forEach((box) => [(box.style.backgroundColor = "white")]);
 }
