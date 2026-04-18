@@ -76,3 +76,16 @@ function resetGrid() {
     box.style.backgroundColor = "white";
   });
 }
+
+function eraser() {
+  document.querySelectorAll(".grid-box").forEach((box) => {
+    box.addEventListener("dragStart", (e) => {
+      e.preventDefault();
+    });
+    box.addEventListener("mouseover", (e) => {
+      if (e.buttons === 1) {
+        box.style.backgroundColor = "white";
+      }
+    });
+  });
+}
