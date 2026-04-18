@@ -2,18 +2,20 @@ const gridContainer = document.querySelector(".grid-container");
 const container = document.querySelector(".container");
 const createBtn = document.querySelector("#create-btn");
 const colorPicker = document.querySelector("#color-box");
-const defaultColor = "#0000ff";
+const defaultColor = "#0000FF";
+let selectedColor = defaultColor;
 createGrid();
-hoveringGrid();
+hoveringGrid(selectedColor);
 
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
   createGrid(gridSize);
-  hoveringGrid();
+  hoveringGrid(selectedColor);
 });
 
 colorPicker.addEventListener("input", (event) => {
-  hoveringGrid(event.target.value);
+  selectedColor = event.target.value;
+  hoveringGrid(selectedColor);
 });
 function createGrid(size = 16) {
   document.querySelectorAll(".row").forEach((row) => {
@@ -34,19 +36,11 @@ function createGrid(size = 16) {
   }
 }
 
-function hoveringGrid(color = defaultColor) {
-  let intervalId;
+function hoveringGrid(color) {
   let boxes = document.querySelectorAll(".grid-box");
   boxes.forEach((box) => {
-    intervalId = setInterval(() => {
-      box.addEventListener("mousedown", () => {
-        box.style.backgroundColor = color;
-      });
-    }, 500);
-  });
-  boxes.forEach((box) => {
-    box.addEventListener("mouseup", () => {
-      clearInterval(intervalId);
+    box.addEventListener("mousedown", () => {
+      box.style.backgroundColor = color;
     });
   });
 }
