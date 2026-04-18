@@ -17,6 +17,7 @@ createGrid();
 coloringGrid(selectedColor);
 colorPicker.value = selectedColor;
 
+// main event listeners
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter");
   createGrid(gridSize);
@@ -29,6 +30,8 @@ colorPicker.addEventListener("input", (event) => {
   coloringGrid(selectedColor);
   colorPicker.value = selectedColor;
 });
+
+// Main functions
 function createGrid(size = 16) {
   document.querySelectorAll(".row").forEach((row) => {
     gridContainer.removeChild(row);
@@ -63,7 +66,7 @@ function coloringGrid(color) {
     });
   });
 }
-
+// resetting functions
 function resetGrid() {
   document.querySelectorAll(".grid-box").forEach((box) => {
     box.style.backgroundColor = "white";
