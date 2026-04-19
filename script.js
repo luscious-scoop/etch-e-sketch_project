@@ -35,7 +35,7 @@ createBtn.addEventListener("click", () => {
   }
 });
 
-colorPicker.addEventListener("input", (event) => {
+colorPicker.addEventListener("change", (event) => {
   selectedColor = event.target.value;
   coloringGrid(selectedColor);
   colorPicker.value = selectedColor;
