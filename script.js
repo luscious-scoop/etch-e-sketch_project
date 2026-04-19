@@ -26,7 +26,7 @@ createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter Grid Size(max=100)");
   if (isNaN(gridSize) || !Number.isInteger(gridSize)) {
     alert("Enter a valid Number!");
-  } else if (gridSize > 100 || gridSize < 0) {
+  } else if (gridSize > 100 || gridSize < 1) {
     alert("Enter a number between 1 and 100");
   } else {
     createGrid(gridSize);
