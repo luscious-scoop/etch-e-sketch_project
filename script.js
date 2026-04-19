@@ -24,8 +24,10 @@ colorPicker.value = selectedColor;
 // main event listeners
 createBtn.addEventListener("click", () => {
   let gridSize = +prompt("Enter Grid Size(max=100)");
-  if (gridSize > 100 || gridSize < 0) {
-    alert("Enter a range between one and 100");
+  if (isNaN(gridSize) || !Number.isInteger(gridSize)) {
+    alert("Enter a valid Number!");
+  } else if (gridSize > 100 || gridSize < 0) {
+    alert("Enter a number between 1 and 100");
   } else {
     createGrid(gridSize);
     colorPicker.value = selectedColor;
